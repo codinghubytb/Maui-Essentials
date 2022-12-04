@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiEssentialsApp.Views.PhoneDialerPage"
+             xmlns:viewModel="clr-namespace:MauiEssentialsApp.ViewModel"
+             x:DataType="viewModel:PhoneDialerViewModel"
+             Title="Phone Dialer">
+    <VerticalStackLayout Spacing="30"
+                         VerticalOptions="CenterAndExpand">
+        <Label 
+            Text="Enter a number !!"
+            FontSize="40"
+            FontAttributes="Bold"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+
+        <HorizontalStackLayout HorizontalOptions="CenterAndExpand">
+
+            <Label Text="Tel : " 
+                   FontSize="Large"
+                   HorizontalOptions="CenterAndExpand"
+                   VerticalOptions="CenterAndExpand"/>
+
+            <Entry HorizontalOptions="CenterAndExpand"
+               Keyboard="Numeric"
+               FontSize="30"
+               Text="{Binding PhoneNumber}"
+               Placeholder="00.00.00.00.00"
+               />
+            
+        </HorizontalStackLayout>
+
+        <Button Text="Call Number"
+                FontSize="30"
+                Command="{Binding CalleNumberCommand}" 
+                HorizontalOptions="CenterAndExpand"/>
+    </VerticalStackLayout>
+</ContentPage>
